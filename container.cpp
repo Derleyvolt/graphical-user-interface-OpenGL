@@ -2,16 +2,16 @@
 
 container::container(sf::RenderWindow& wnd, int h, int w, Point pos, sf::Color cl) : component(wnd) {
     // limites do drag-bar
-    drag_bar_limits = sf::Rect<float>(pos, Point(w, drag_bar_height));
+    drag_bar_limits = sf::Rect<float>(pos, Point(w, DRAG_BAR_HEIGHT));
 
     // configurações do drag-bar 
-    drag_bar.setSize(Point(w, drag_bar_height));
+    drag_bar.setSize(Point(w, DRAG_BAR_HEIGHT));
     drag_bar.setPosition(pos);
     drag_bar.setFillColor(sf::Color(0, 35, 135));
 
     // modificações pra acomodar o drag-bar
-    h     -= drag_bar_height;
-    pos.y += drag_bar_height;
+    h     -= DRAG_BAR_HEIGHT;
+    pos.y += DRAG_BAR_HEIGHT;
 
     // lowerbound to heigth and width
     h = std::max(h, 100);
