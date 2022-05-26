@@ -9,21 +9,15 @@
 typedef sf::Vector2f Point;
 
 class component {
+private: 
+    sf::Font font;
+
 public:
     sf::RenderWindow& window;
     sf::Rect<float>   limits;
     sf::Text          title;
-    sf::Font          font;
 
-    component(sf::RenderWindow& wnd) : window(wnd) {
-        std::cout << "Fonte carregada" << std::endl;
-        if(!font.loadFromFile("LinLibertine_aBL.ttf")) {
-            std::cout << "Ocorreu algum erro no load da imagem" << std::endl;
-        }
-
-        title.setFont(font);
-        title.setScale(Point(0.5, 0.5));
-    }
+    component(sf::RenderWindow& wnd);
 
     virtual void set_text(std::string title) = 0;
     virtual void draw()      = 0;
