@@ -23,7 +23,6 @@ container::container(sf::RenderWindow& wnd, int h, int w, Point pos, sf::Color c
     rectangle.setSize(Point(w, h));
     rectangle.setPosition(pos);
     rectangle.setFillColor(cl);
-    set_text("Algorithms");
 }
 
 void container::set_text(std::string text) {
